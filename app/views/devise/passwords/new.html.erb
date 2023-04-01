@@ -1,0 +1,32 @@
+<section class="flex flex-col w-full min-h-screen flex justify-center items-center bg-gray-50 dark:bg-gray-900">
+
+  <%= render "devise/shared/errors", resource: resource %>
+
+  <div class="relative w-[460px] h-[320px] dark:bg-gray-800 rounded-lg overflow-hidden">
+    <div class="absolute w-[460px] h-[320px] bg-gradient-to-l from-cyan-500 via-cyan-500 to-transparent -top-[50%] -left-[50%] animate-spin-slow origin-bottom-right"></div>
+    <div class="absolute w-[460px] h-[320px] bg-gradient-to-l from-rose-500 via-rose-500 to-transparent -top-[50%] -left-[50%] animate-spin-slow-delayed origin-bottom-right"></div>
+
+    <div class="absolute inset-1 bg-gray-800 rounded-lg z-10 p-5">
+      <div class="p-6 space-y-4 md:space-y-6 sm:p-4">
+        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+          Forgot your password ?
+        </h1>
+
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'space-y-4 md:space-y-6'}) do |f| %>
+          <div>
+            <%= f.label :email, 'Enter your email', class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+            <%= f.email_field :email, required: true, placeholder:'name@domain.com', class:"bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
+          </div>
+
+          <div class="mb-3 d-flex align-items-center justify-content-center">
+            <%= f.submit "Send me reset password instructions", class:"w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg px-4 py-3 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>
+          </div>
+
+          <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+            Back to <a href="<%= new_user_session_path %>" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign in</a>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

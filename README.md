@@ -1,24 +1,39 @@
-# README
+![banner](https://zupimages.net/up/23/13/mquf.jpg)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center"> Pre-configured Rails 7 application with an authentication system<p>
 
-Things you may want to cover:
+<p align="center">  
+  <a href="#features">Features</a> •  
+  <a href="#installation-instructions">Quick Start</a> •  
+  <a href="#preview">Preview</a> •  
+</p>  
 
-* Ruby version
+# Features
+* Rails 7
+* TailwindCSS
+* TurboRails, Stimulus & Stimulus Notifications
+    * Notification management (`flash[:notice]`, `flash[:alert]` and Devise errors) with pretty Toasts that disappear automatically
+* Full authentication system with [Devise](https://github.com/heartcombo/devise) & [OmniAuth](https://github.com/omniauth/omniauth)
+    * oAuth authentication with Github
 
-* System dependencies
+# Quick Start
 
-* Configuration
+Complete the `.env` file
+```bash  
+mv .env.example .env  
+nano .env  
+```  
 
-* Database creation
+```docker  
+docker-compose up --build
+docker-compose run app rake db:create
+docker-compose run app rake db:migrate
+docker-compose run app npm install
+docker-compose run app bin/dev
+```  
 
-* Database initialization
+Once the Docker environment is up, you can access the application at [http://localhost:3000](http://localhost:3000)
 
-* How to run the test suite
+# Preview
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](preview.gif)

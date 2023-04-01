@@ -1,11 +1,11 @@
 ![banner](https://zupimages.net/up/23/13/mquf.jpg)
 
-<p align="center"> Pre-configured Rails 7 application with an authentication system<p>
+<p align="center">Pre-configured Rails 7 application with an authentication system<p>
 
 <p align="center">  
   <a href="#features">Features</a> •  
-  <a href="#installation-instructions">Quick Start</a> •  
-  <a href="#preview">Preview</a> •  
+  <a href="#quick-start">Quick Start</a> •  
+  <a href="#preview">Preview</a>
 </p>  
 
 # Features
